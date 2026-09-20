@@ -31,13 +31,24 @@ under this one.
 
 The settings this depends on, in this repository: **Settings → Pages → Source: Deploy from a branch →
 `main` → `/ (root)`**, with **Custom domain** set to `libraries.horizon36596.org` and **Enforce HTTPS**
-ticked once the certificate has issued. The DNS record is a `CNAME` on the name `libraries` pointing at
-`horizon-36596.github.io`.
+ticked. The DNS record is a `CNAME` on the name `libraries` pointing at `horizon-36596.github.io`.
+
+## The `CNAME` file here is load-bearing — do not delete it
+
+Publishing from a branch means the custom domain **is** a `CNAME` file at the root of the publishing
+source, and GitHub committed one here by itself when the domain was saved. Removing it drops the domain
+for **every** library at once, not just this page.
+
+The library repositories are the opposite case and must have **no** `CNAME` file: they publish from a
+GitHub Actions workflow, where such a file is ignored, and a custom domain on one of them would make it
+claim a domain root instead of taking a path under this one. Same file name, opposite rule, and what
+decides it is how the site is published.
 
 ## Adding a library to the list
 
 Copy the `<a class="library">` block in `index.html` and edit it. The tags are plain text: status,
-language, licence, package root. Nothing on this page is generated, so nothing on it can go stale
+language, licence, and the dependency coordinate a team would paste — the coordinate, not the Java
+package root, because those two look alike and only one of them resolves. Nothing on this page is generated, so nothing on it can go stale
 without someone choosing not to update it.
 
 ## Keeping it looking like everything else
