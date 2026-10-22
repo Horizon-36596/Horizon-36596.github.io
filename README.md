@@ -10,7 +10,7 @@ Three files, no build step, no framework, no dependency:
 | File | What it is |
 |------|------------|
 | `index.html` | The list of libraries. |
-| `404.html` | Served for any unmatched path. It exists mainly to explain the one mistake people will make — the path is the repository name and it is case-sensitive, so `/simloop` works and `/SimLoop` does not. |
+| `404.html` | Served for any unmatched path. It exists mainly to explain the one mistake people will make — the path is the repository name and it is case-sensitive, so `/zenith` works and `/Zenith` does not. |
 | `horizon-mark.svg` | The team mark. |
 
 ## Why the library documentation lives under this domain
@@ -20,7 +20,7 @@ name, as long as that project has **no custom domain of its own**:
 
 ```
 libraries.horizon36596.org/            <- this repository
-libraries.horizon36596.org/simloop/    <- the Horizon-36596/simloop repository's Pages site
+libraries.horizon36596.org/zenith/     <- the Horizon-36596/zenith repository's Pages site
 libraries.horizon36596.org/<next>/     <- whatever comes next, with no DNS work at all
 ```
 
